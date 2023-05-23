@@ -1,0 +1,34 @@
+minimum_cumulusci_version: '3.75.1'
+project:
+    name: zd-framework
+    package:
+        name: zd-framework
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    test:
+        name_match: '%Test'
+    source_format: sfdx
+
+orgs:
+    scratch:
+        dev:
+            config_file: orgs/dev.json
+            days: 30
+            namespaced: False
+
+tasks:
+    robot:
+        options:
+            suites: robot/zd-framework/tests
+            options:
+                outputdir: robot/zd-framework/results
+
+    robot_testdoc:
+        options:
+            path: robot/zd-framework/tests
+            output: robot/zd-framework/doc/zd-framework_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 90

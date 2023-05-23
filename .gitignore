@@ -44,3 +44,14 @@ package.json
 /node_modules
 package-lock.json
 
+# IntelliJ with Illuminated Cloud
+*.iml
+.idea/
+IlluminatedCloud/
+Referenced\ Packages/*
+out/
+
+# PMD
+pmd-report.csv
+*pmd-report.xlsx
+
